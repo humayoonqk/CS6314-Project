@@ -1,5 +1,7 @@
 <?php
+
 require_once '../config.php';
+require_once 'header.php';
 $username = "";
 $password = "";
 $username_err = "";
@@ -21,10 +23,13 @@ if (isset($_POST['submit'])) {
   }
 
   if (empty($username_err) && empty($password_err)) {
+
     $sql = "SELECT * FROM admin WHERE email = '$username' AND password = '$password'";
+
     $result = mysqli_query($link,$sql);
+
     if (mysqli_num_rows($result) > 0) {
-       //session_start();
+       session_start();
       $_SESSION['aloggedin'] = true;
       header('location: profile.php');
     }else{
@@ -39,7 +44,7 @@ function test_input($data){
   $data = htmlspecialchars($data);
   return $data;
 }
-require_once 'header.php';
+
  ?>
 <div class="container">
   <div class="row">

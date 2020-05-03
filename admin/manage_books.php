@@ -1,5 +1,5 @@
 <?php
-
+  session_start();
   require_once 'header.php';
   require_once 'logincheck.php';
  ?>
@@ -30,7 +30,7 @@
  <div class="card-body">
  <h3 class="card-title text-primary">View Books</h3>
 
- <a href="manage_books.php" class="btn btn-success" style="width:100%;">View Books</a>
+ <a href="view_books.php" class="btn btn-success" style="width:100%;">View Books</a>
  </div>
  </div>
 
@@ -39,7 +39,7 @@
  <div class="card-body">
  <h3 class="card-title text-primary">Remove Books</h3>
 
- <a href="registered_users.php" class="btn btn-success" style="width:100%;">Remove Books</a>
+ <a href="delete_books.php" class="btn btn-success" style="width:100%;">Remove Books</a>
  </div>
  </div>
 

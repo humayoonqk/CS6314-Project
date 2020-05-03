@@ -7,8 +7,8 @@
   $users = "";
 
   if (isset($_POST['q'])) {
-    $username = test_input($_POST['username']);
-    $sql = " SELECT * FROM login WHERE username = '$username' ";
+    $book_id = test_input($_POST['book_id']);
+    $sql = " SELECT * FROM books WHERE book_id = $book_id ";
 
     $result = mysqli_query($link,$sql);
 
@@ -16,50 +16,56 @@
       while ($row = mysqli_fetch_array($result)) {
         $output = '<table class="table">
           <tr>
-            <th>User_ID</th>
-            <th>Username</th>
-            <th>Name</th>
-            <th>Mobile</th>
+            <th>Book_ID</th>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Image</th>
           </tr>
           <tr>
-            <td>'.$row['user_id'].'</td>
-            <td>'.$row['username'].'</td>
-            <td>'.$row['name'].'</td>
-            <td>'.$row['mobile'].'</td>
+            <td>'.$row['book_id'].'</td>
+            <td>'.$row['book_name'].'</td>
+            <td>'.$row['author'].'</td>
+            <td>'.$row['price'].'</td>
+            <td><img src = "'.$row["book_img"].'" height="100" width="100"></td>
           </tr>
         </table>';
       }
-    }else {
+    }
+    else {
       $output = '<div class="alert alert-danger">No record found</div>';
     }
   }
 
   if (isset($_POST['all'])) {
-    $sql = " SELECT * FROM login ";
+
+    $sql = " SELECT * FROM books ";
 
     $result = mysqli_query($link,$sql);
 
-    $users = mysqli_num_rows($result);
+    $books = mysqli_num_rows($result);
 
     if (mysqli_num_rows($result)>0) {
       $output .= '
-      <h4 class="text-success"> Total Users: '.$users.'</h4>
+      <h4 class="text-success"> Total Books: '.$books.'</h4>
       <table class="table">
         <tr>
-          <th>User_ID</th>
-          <th>Username</th>
-          <th>Name</th>
-          <th>Mobile</th>
+        <th>Book_ID</th>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Image</th>
         </tr>';
 
       while ($row = mysqli_fetch_array($result)) {
 
         $output .= '
           <tr>
-            <td>'.$row['user_id'].'</td>
-            <td>'.$row['username'].'</td>
-            <td>'.$row['name'].'</td>
-            <td>'.$row['mobile'].'</td>
+          <td>'.$row['book_id'].'</td>
+          <td>'.$row['book_name'].'</td>
+          <td>'.$row['author'].'</td>
+          <td>'.$row['price'].'</td>
+          <td><img src = "'.$row["book_img"].'" height="100" width="100"></td>
           </tr>
         </table>';
       }
@@ -81,8 +87,8 @@
      <div class="col-lg-2">
      </div>
      <div class="col-lg-10">
-       <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Enter username" aria-label="Search">
+       <form class="form-inline" method="post">
+    <input class="form-control mr-sm-2" name="book_id" type="text" placeholder="Enter Book ID" aria-label="Search">
     <input class="btn btn-outline-success my-2 my-sm-0" name="q" type="submit" value="Search"> &nbsp; &nbsp;
     <button class="btn btn-outline-success my-2 my-sm-0" name="all" type="submit">View All</button>
   </form>
