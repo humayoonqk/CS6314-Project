@@ -18,5 +18,27 @@ footer {
 </footer>
 </div>
 
+<!-- adding script as required in 23, ask humayun -->
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.login').click(function(event) {
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    $('#loginModal').modal('show');
+    return false;
+
+  });
+
+  // console.log("orint");
+  //new code
+  $('button[type=button]').click(function() {
+    var id = $(this).attr("id");
+    console.log(id);
+    alert(id);
+  });
+
+});
+
+</script>
 </body>
 </html>
