@@ -25,7 +25,7 @@
             <td>'.$row['user_id'].'</td>
             <td>'.$row['email'].'</td>
             <td>'.$row['username'].'</td>
-            <td>'.$row['mobile'].'</td>
+            <td>'.$row['cellphone'].'</td>
           </tr>
         </table>';
       }
@@ -59,9 +59,8 @@
             <td>'.$row['user_id'].'</td>
             <td>'.$row['email'].'</td>
             <td>'.$row['username'].'</td>
-            <td>'.$row['mobile'].'</td>
-          </tr>
-        </table>';
+            <td>'.$row['cellphone'].'</td>
+          </tr>';
       }
       $output .= '</table>';
     }
@@ -81,8 +80,8 @@
      <div class="col-lg-2">
      </div>
      <div class="col-lg-10">
-       <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Enter username" aria-label="Search">
+       <form class="form-inline" method="POST">
+    <input class="form-control mr-sm-2" type="search" name="username" placeholder="Enter username" aria-label="Search">
     <input class="btn btn-outline-success my-2 my-sm-0" name="q" type="submit" value="Search"> &nbsp; &nbsp;
     <button class="btn btn-outline-success my-2 my-sm-0" name="all" type="submit">View All</button>
   </form>
