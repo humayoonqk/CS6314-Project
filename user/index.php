@@ -17,6 +17,16 @@
         <tr><td><a href="science.php">Science</a></td></tr> <!-- nf -->
         <tr><td><a href="others.php">Others</a></td></tr> <!-- a -->
       </table>
+      <br>
+      <br>
+      <table class="sidebar">
+        <tr><td>Pricing Category</td></tr>
+        <tr><td><a href="fivetoten.php">$5 - $10</a></td></tr> <!-- mp -->
+        <tr><td><a href="tentofifteen.php">$10 - $15</a></td></tr> <!-- d -->
+        <tr><td><a href="fifteentotwenty.php">$15 - $20</a></td></tr> <!-- sh -->
+        <tr><td><a href="twentytotwentyfive.php">$20 - $25</a></td></tr> <!-- f -->
+        <tr><td><a href="twentyfiveplus.php">$25+</a></td></tr> <!-- nf -->
+      </table>
     </div>
     <div class="col-sm-9">
       <span id="status"></span>
