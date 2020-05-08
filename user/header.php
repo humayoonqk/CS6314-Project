@@ -1,8 +1,4 @@
-<?php
-  session_start();
 
-
- ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -70,6 +66,11 @@
 
     }
 
+    #product{
+      padding: 15px;
+
+    }
+
 
 </style>
   </head>
@@ -80,16 +81,15 @@
         Email: <i class="fas fa-envelope"></i> akhtarhumayun2@gmail.com
       </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <a class="navbar-brand" href="profile.php"><img src="images/bookstorelogo.jpg" alt="" href="80" width="100" /></a>
+      <a class="navbar-brand" href="index.php"><img src="images/bookstorelogo.jpg" alt="" href="80" width="100" /></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <?php
-
           if (isset($_SESSION['loggedin'])) {
-            echo '<a class="nav-link" href="cart.php"><b>Cart<i class="fas fa-shopping-cart"></i><span class="badge badge-warning" style="border-radius:50%;height:20px">0</span></a></b>
+            echo '<a class="nav-link" href="cart.php"><b>Cart<i class="fas fa-shopping-cart"></i><span class="badge badge-warning" style="border-radius:50%;height:20px;" id="countcart"></span></a></b>
             <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           My Account
@@ -97,7 +97,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="profile.php"><i class="fas fa-user"></i> My Profile</a>
           <a class="dropdown-item" href="change_password.php"><i class="fas fa-key"></i> Change Password</a>
-          <a class="dropdown-item" href="orders.php"><i class="fas fa-cube"></i> Orders</a>
+          <a class="dropdown-item" href="order_history.php"><i class="fas fa-cube"></i> Orders</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>

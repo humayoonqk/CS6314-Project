@@ -6,17 +6,16 @@ $uEmail = $_POST['check'];
 $uPassword = $_POST['password'];
 $uCellphone = $_POST['cellphone'];
 
-echo $uName;
 $output = "";
 
-$sql = "INSERT INTO user (username, email, password, cellphone) VALUES ('$uName', '$uEmail', '$uPassword', '$uCellphone')";
+$sql = "INSERT INTO user(username, email, password, cellphone) VALUES ('$uName', '$uEmail', '$uPassword', '$uCellphone')";
 
-if ($link->query($sql) === TRUE) {
+if (mysqli_query($link,$sql)) {
     $output = '<div class="alert alert-success">Signup done!</div>';
 } else {
-    $output = '<div class="alert alert-success">Signup did not go through.</div>';
+    $output = '<div class="alert alert-danger">Signup did not go through.</div>';
 }
 
-echo  $output;
+echo $output;
 
 ?>

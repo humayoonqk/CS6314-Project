@@ -8,7 +8,7 @@
 
   if (isset($_POST['q'])) {
     $username = test_input($_POST['username']);
-    $sql = " SELECT * FROM login WHERE username = '$username' ";
+    $sql = " SELECT * FROM user WHERE username = '$username' ";
 
     $result = mysqli_query($link,$sql);
 
@@ -17,14 +17,14 @@
         $output = '<table class="table">
           <tr>
             <th>User_ID</th>
-            <th>Username</th>
+            <th>Email</th>
             <th>Name</th>
-            <th>Mobile</th>
+            <th>Phone</th>
           </tr>
           <tr>
             <td>'.$row['user_id'].'</td>
+            <td>'.$row['email'].'</td>
             <td>'.$row['username'].'</td>
-            <td>'.$row['name'].'</td>
             <td>'.$row['mobile'].'</td>
           </tr>
         </table>';
@@ -35,7 +35,7 @@
   }
 
   if (isset($_POST['all'])) {
-    $sql = " SELECT * FROM login ";
+    $sql = " SELECT * FROM user ";
 
     $result = mysqli_query($link,$sql);
 
@@ -47,9 +47,9 @@
       <table class="table">
         <tr>
           <th>User_ID</th>
-          <th>Username</th>
+          <th>Email</th>
           <th>Name</th>
-          <th>Mobile</th>
+          <th>Phone</th>
         </tr>';
 
       while ($row = mysqli_fetch_array($result)) {
@@ -57,8 +57,8 @@
         $output .= '
           <tr>
             <td>'.$row['user_id'].'</td>
+            <td>'.$row['email'].'</td>
             <td>'.$row['username'].'</td>
-            <td>'.$row['name'].'</td>
             <td>'.$row['mobile'].'</td>
           </tr>
         </table>';

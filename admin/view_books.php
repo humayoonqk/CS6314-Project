@@ -30,6 +30,7 @@
             <td><img src = "'.$row["book_img"].'" height="100" width="100"></td>
           </tr>
         </table>';
+
       }
     }
     else {
@@ -66,8 +67,7 @@
           <td>'.$row['author'].'</td>
           <td>'.$row['price'].'</td>
           <td><img src = "'.$row["book_img"].'" height="100" width="100"></td>
-          </tr>
-        </table>';
+          </tr>';
       }
       $output .= '</table>';
     }

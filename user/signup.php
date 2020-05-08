@@ -1,5 +1,3 @@
-<?php require_once 'header.php'; ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -285,13 +283,12 @@
             $('#messagebox').css("border", "2px solid green");
 
             //Ajax call to send data to DB.
-            $.ajax( {
-              url: 'signuphandler.php',
-              method: 'POST',
+            $.ajax({
+              url:'signuphandler.php',
+              method:'POST',
               data:{name:name, check:check, password:password, cellphone:cellphone},
               dataType: "text",
               success:function(data) {
-                console.log("getting here");
                 $('#messagebox').html(data);
               }
             });

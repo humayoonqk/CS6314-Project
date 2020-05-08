@@ -38,8 +38,8 @@
             session_start();
 
             $_SESSION['loggedin'] = true;
-            $_SESSION['id'] = $row['id'];
-            $_SESSION['name'] = $row['name'];
+            $_SESSION['id'] = $row['user_id'];
+            $_SESSION['name'] = $row['username'];
             header('location: index.php');
 
           }
